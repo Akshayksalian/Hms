@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+D:\Workspaces\ProjectEY\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4278501618.index
