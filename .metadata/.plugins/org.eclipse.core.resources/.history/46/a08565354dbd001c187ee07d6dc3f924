@@ -1,0 +1,20 @@
+package com.hms.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hms.dao.AdminDAO;
+import com.hms.entities.Admin;
+
+@Service
+@Transactional(readOnly = true)
+public class AdminServiceImpl implements AdminService{
+	
+	@Autowired
+	private AdminDAO dao;
+
+	@Override
+	public void add(Admin admin) {
+		dao.add(admin);
+	}
+
+}

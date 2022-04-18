@@ -1,0 +1,10 @@
+package TestingMain;
+
+public class App {
+	public static void main(String[] args) {
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		em.getTransaction().begin();
+		
+	}
+}

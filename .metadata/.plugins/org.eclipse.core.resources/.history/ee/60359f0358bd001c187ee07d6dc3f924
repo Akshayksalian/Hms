@@ -1,0 +1,47 @@
+package com.hms.entities;
+
+import java.util.ArrayList;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Technology_stack {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int technology_id;
+	
+	private String technology_name;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="technology_id" , referencedColumnName = "technology_id")
+	private Candidates_skills candidates_skill = new ArrayList<>();
+
+	public int getTechnology_id() {
+		return technology_id;
+	}
+
+	public String getTechnology_name() {
+		return technology_name;
+	}
+
+	public void setTechnology_name(String technology_name) {
+		this.technology_name = technology_name;
+	}
+
+	public List<Candidates_skills> getCandidates_skill() {
+		return candidates_skill;
+	}
+
+	public void setCandidates_skill(List<Candidates_skills> candidates_skill) {
+		this.candidates_skill = candidates_skill;
+	}
+	
+
+
+}

@@ -1,0 +1,14 @@
+package TestingMain;
+
+import javax.persistence.EntityManager;
+
+import com.hms.JPAUtil;
+
+public class App {
+	public static void main(String[] args) {
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		em.getTransaction().begin();
+		
+	}
+}

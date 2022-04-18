@@ -1,0 +1,20 @@
+package com.hms.entities;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Candidates_skills {
+	
+	@Id
+	private int id;
+	
+	@OneToOne(mappedBy = "technology_stack_cand")
+	private Technology_stack technology_stack_cand;
+	
+
+	
+}

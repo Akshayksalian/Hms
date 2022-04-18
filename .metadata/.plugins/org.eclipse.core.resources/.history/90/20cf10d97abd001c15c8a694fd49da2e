@@ -1,0 +1,19 @@
+package com.hms.resources;
+
+import javax.ws.rs.Path;
+
+import com.hms.service.AdminService;
+
+@Path("/admin")
+public class AdminResources {
+	
+	private AdminService adminService;
+	
+	@GET
+	@Path("/{id}")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public User getUserById(@PathParam("id") int id) {
+		return userService.findUserById(id);
+	}
+	
+}

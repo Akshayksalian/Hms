@@ -1,0 +1,26 @@
+package TestingMain;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.hms.JPAUtil;
+import com.hms.entities.Admin;
+
+public class App {
+	public static void main(String[] args) {
+		
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("JPAPersistence");
+		EntityManager
+		
+		Admin a = new Admin();
+		a.setAdmin_name("Akshay");
+		a.setAdmin_email("janls@ad.com");
+		a.setAdmin_password("Sefsef");
+		
+		em.persist(a);
+		
+		em.getTransaction().commit();
+		JPAUtil.cleanUp();
+	}
+}

@@ -1,0 +1,20 @@
+package com.hms.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Admin;
+
+@Repository
+public class AdminDAOImpl implements AdminDAO{
+
+	@Override
+	public List<Admin> findAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
+}

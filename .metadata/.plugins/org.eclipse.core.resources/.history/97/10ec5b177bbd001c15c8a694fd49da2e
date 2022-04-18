@@ -1,0 +1,11 @@
+package com.hms.service;
+
+import com.hms.entities.Admin;
+
+public interface AdminService {
+	
+	void add (Admin admin);
+
+	Admin findStudentById(int id);
+
+}

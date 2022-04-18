@@ -1,0 +1,21 @@
+package com.hms.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Admin;
+
+@Repository
+public class AdminDAOImpl implements AdminDAO{
+
+	@Override
+	public List<User> findAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
+}

@@ -1,0 +1,14 @@
+package com.hms.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Candidates_skills {
+	
+	@Id
+	private int id;
+	
+	private Technology_stack technology_stack;
+	
+}

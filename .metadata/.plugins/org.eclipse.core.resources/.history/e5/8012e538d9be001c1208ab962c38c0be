@@ -1,0 +1,38 @@
+package com.hms.entities;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+/*
+ * 
+ */
+@Entity
+public class Candidates_skills {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int candidates_skills_id;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="technology_id")
+	private Technology_stack technology_stack_fk_cand;
+
+	public Candidates_skills() {
+		super();
+	
+	}
+
+	public Candidates_skills(int candidates_skills_id, Technology_stack technology_stack_fk_cand) {
+		super();
+		this.candidates_skills_id = candidates_skills_id;
+		this.technology_stack_fk_cand = technology_stack_fk_cand;
+	}
+	
+	
+	
+}

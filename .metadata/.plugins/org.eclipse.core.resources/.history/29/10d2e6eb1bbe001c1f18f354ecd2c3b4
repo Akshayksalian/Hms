@@ -1,0 +1,22 @@
+package com.hms.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Admin;
+
+@Repository
+public class AdminDAOImpl implements AdminDAO{
+	
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public Admin getAdminById(int id) {
+		Admin admin = em.find(Admin.class, id);
+		return admin;
+	}
+
+}

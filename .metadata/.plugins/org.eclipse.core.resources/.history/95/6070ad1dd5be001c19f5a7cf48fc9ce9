@@ -1,0 +1,11 @@
+package com.hms.service;
+
+import com.hms.entities.Admin;
+
+public interface AdminService {
+
+	Admin findAdminById(int id);
+
+	List<Admin> findAllAdmins();
+
+}

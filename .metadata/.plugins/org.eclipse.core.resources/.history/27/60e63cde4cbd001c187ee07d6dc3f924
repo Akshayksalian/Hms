@@ -1,0 +1,16 @@
+package com.hms.service;
+
+import com.hms.dao.AdminDAO;
+import com.hms.entities.Admin;
+
+public class AdminServiceImpl implements AdminService{
+	
+	private AdminDAO
+
+	@Override
+	public void add(Admin admin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
