@@ -1,9 +1,11 @@
 package com.hms.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +20,12 @@ import javax.persistence.OneToOne;
  * 
  */
 @Entity
-public class Candidates {
+public class Candidates implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -145,6 +152,7 @@ public class Candidates {
 		this.feedback = feedback;
 	}
 
+	@JsonbTransient
 	public Interviewer getInterviewer() {
 		return interviewer;
 	}
@@ -152,7 +160,8 @@ public class Candidates {
 	public void setInterviewer(Interviewer interviewer) {
 		this.interviewer = interviewer;
 	}
-
+	
+	@JsonbTransient
 	public List<Candidates_skills> getCandidates_skill() {
 		return candidates_skill;
 	}
@@ -161,6 +170,7 @@ public class Candidates {
 		this.candidates_skill = candidates_skill;
 	}
 
+	@JsonbTransient
 	public List<Questionaire> getQuestionaire() {
 		return questionaire;
 	}

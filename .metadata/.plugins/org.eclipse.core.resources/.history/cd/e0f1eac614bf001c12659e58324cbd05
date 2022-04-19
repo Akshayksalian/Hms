@@ -1,0 +1,39 @@
+package com.hms.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Admin;
+import com.hms.entities.Candidates;
+
+/*
+ * 
+ */
+@Repository
+public class CandidatesDAOImpl implements CandidatesDAO {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	/*
+	 * 
+	 */
+	@Override
+	public Candidates getCandidatesById(int id) {
+		Admin candidates = em.find(Admin.class, id);
+		return candidates;
+	}
+	
+	/*
+	 * 
+	 */
+	@Override
+	public List<Admin> getAllCandidates() {
+		  return em.createQuery("SELECT a FROM Admin a", Admin.class).getResultList();   
+	}
+
+}

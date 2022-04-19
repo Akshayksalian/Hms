@@ -1,0 +1,46 @@
+package com.hms.resources;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hms.entities.Candidates;
+import com.hms.service.CandidatesService;
+
+/*
+ * 
+ */
+@Path("admin")
+public class AdminPageResources {
+
+	@Autowired
+	private CandidatesService candidatesService;
+	
+	/*
+	 * 
+	 */
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	public List<Candidates> getAllCandidates(){
+		System.out.println("Inside Candidates All");
+		return candidatesService.getAllCandidates();
+	}
+
+	/*
+	 * 
+	 */
+	@GET
+	@Path("/{id}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Candidates getCandidatesById(@PathParam("id") int id) {
+		System.out.println("I Am Object");
+		return candidatesService.getCandidatesById(id);
+	}
+
+}

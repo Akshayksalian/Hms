@@ -1,8 +1,0 @@
-package com.hms.resources;
-
-import javax.ws.rs.Path;
-
-@Path("/admin")
-public class AdminResources {
-
-}

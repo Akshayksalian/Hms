@@ -1,5 +1,6 @@
 package com.hms.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,12 @@ import javax.persistence.OneToOne;
  * 
  */
 @Entity
-public class Interviewer {
+public class Interviewer implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,0 @@
-package com.hms.resources;
-
-@Path("/admin")
-public class AdminResources {
-
-}
