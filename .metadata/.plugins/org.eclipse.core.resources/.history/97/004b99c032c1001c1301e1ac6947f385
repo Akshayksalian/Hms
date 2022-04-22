@@ -1,0 +1,11 @@
+package com.hms.dao;
+
+import com.hms.entities.Questionaire;
+
+public interface QuestionaireDAO {
+	
+	public abstract Questionaire getAnswerById(int id);
+	
+	public abstract void addAnswer(Questionaire questionaire);
+
+}

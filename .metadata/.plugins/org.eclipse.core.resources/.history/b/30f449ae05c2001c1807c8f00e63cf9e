@@ -1,0 +1,16 @@
+package com.hms.dao;
+
+import java.util.List;
+
+import com.hms.entities.Admin;
+
+public  interface RegistrationDAO {
+	
+	public abstract Admin getAdminById(int id);
+
+	public abstract List<Admin> getAllAdmin();
+	
+	public void addAdmin(Admin admin);
+
+	
+}

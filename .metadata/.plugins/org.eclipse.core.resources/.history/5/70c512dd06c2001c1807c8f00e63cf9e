@@ -1,0 +1,15 @@
+package com.hms.service;
+
+import java.util.List;
+
+import com.hms.entities.Admin;
+
+public interface RegistrationService {
+	Admin getAdminById(int id);
+
+	List<Admin> getAllAdmin();
+
+
+	public void addAdmin(Admin admin);
+
+}

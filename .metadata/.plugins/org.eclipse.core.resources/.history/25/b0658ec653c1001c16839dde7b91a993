@@ -1,0 +1,59 @@
+package com.hms.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hms.dao.AdminDAO;
+import com.hms.entities.Candidates;
+
+/*
+ * 
+ */
+@Service
+@Transactional(readOnly = true)
+public class AdminServiceImpl implements AdminService {
+
+	@Autowired
+	private AdminDAO dao;
+
+	@Override
+	public Candidates findCandidateById(int id) {
+		Candidates candidates = dao.getCandidateById(id);
+		return candidates;
+	}
+	
+	@Override
+	public List<Candidates> findAllCandidates() {
+		return dao.getAllCandidates();
+	}
+
+	@Override
+	@Transactional
+	public void addCandidates(Candidates candidates) {
+		dao.addCandidates(candidates);
+	}
+
+	@Override
+	public Candidates updateCandidates(Candidates candidates) {	
+		Candidates c = findCandidateById(candidates.getCandidates_id());
+		if(u == null ) {
+			throw new IllegalArgumentException("Id not Found " +candidates.getUserId());
+		}
+		return null;
+	}
+	
+//	@Override
+//	@Transactional
+//	public User updateUser(User user) {
+//		User u = findUserById(user.getUserId());
+//		if (u == null) {
+//			throw new IllegalArgumentException("Id not Found " + user.getUserId());
+//		}
+//		u.setUserName(user.getUserName());
+//		return dao.updateUser(u);
+//	}
+
+}

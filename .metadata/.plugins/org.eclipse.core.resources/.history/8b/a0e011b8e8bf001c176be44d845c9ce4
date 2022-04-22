@@ -1,0 +1,15 @@
+package com.hms.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Questionaire;
+
+@Repository
+public class QuestionaireDAOImpl implements QuestionaireDAO{
+
+	@Override
+	public void addAnswer(Questionaire questionaire) {
+		
+	}
+
+}

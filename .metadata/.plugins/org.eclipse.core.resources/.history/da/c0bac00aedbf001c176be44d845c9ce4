@@ -1,0 +1,25 @@
+package com.hms.dao;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Questionaire;
+
+@Repository
+public class QuestionaireDAOImpl implements QuestionaireDAO{
+
+	private EntityManager em;
+	
+	@Override
+	public Questionaire getCandidateById(int id) {
+		Questionaire questionaire = em.find(Questionaire.class, id);
+		return questionaire;
+	}
+	
+	@Override
+	public void addAnswer(Questionaire questionaire) {
+		em.persist(questionaire);
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.hms.service;
+
+import com.hms.entities.Questionaire;
+
+public interface QuestionaireService {
+	
+	Questionaire getAnswerById
+	
+	public abstract void addAnswer(Questionaire questionaire);
+
+}

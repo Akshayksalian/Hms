@@ -1,0 +1,12 @@
+package com.hms.resources;
+
+import javax.ws.rs.Path;
+
+import com.hms.service.QuestionaireService;
+
+@Path("/questionaire")
+public class QuestionaireResources {
+	
+	private QuestionaireService questionaireService;
+	
+}

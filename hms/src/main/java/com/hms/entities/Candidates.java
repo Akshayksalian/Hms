@@ -50,7 +50,7 @@ public class Candidates implements Serializable{
 	private List<Candidates_skills> candidates_skill = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "questionaire_id")
+	@JoinColumn(name = "candidates_id")
 	private List<Questionaire> questionaire = new ArrayList<>();
 
 	public Candidates() {
