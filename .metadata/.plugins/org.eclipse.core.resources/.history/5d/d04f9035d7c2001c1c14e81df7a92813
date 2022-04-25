@@ -1,0 +1,10 @@
+package com.hms.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Domain {
+
+	private int domain_id;
+	
+}

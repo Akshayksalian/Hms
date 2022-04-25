@@ -1,26 +1,23 @@
 package com.hms.entities;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
-import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /*
  * 
  */
 @Entity
-public class Candidates implements Serializable{
+public class Candidates implements Serializable {
 
 	/**
 	 * 
@@ -31,69 +28,82 @@ public class Candidates implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int candidates_id;
 
-	private String firstname;
-	private String lastname;
+	@Column(nullable = false)
+	private String name;
+	
+	@Column(nullable = false)
 	private int exp;
-	private int noticeperiod;
-	private String phoneno;
+	
+	@Column(nullable = false)
+	private String candidate_skills;
+	
+	@Column(nullable = false)
 	private String email;
-	private String status;
-	private LocalDate interview_sceduled_date;
+	
+	@Column(nullable = false)
+	private String contact_no;
+	
+	@Column(nullable = false)
+	private String company_name;
+	
+	@Column(nullable = false)
+	private String candidates_location;
+	
+	private int notice_period;
+	private int expected_ctc;
+	private String shifts;
+	private String relocation;
 	private String feedback;
-
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "interviewer_fk")
+	private LocalDateTime interview_sceduled_date;
+	private String status;
+	
+	@ManyToOne
+	@JoinColumn(name = "job_id", nullable = false)
+	private Domain domain;
+	
+	@OneToOne(cascade = CascadeType.ALL)
 	private Interviewer interviewer;
-
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "candidates_id", referencedColumnName = "candidates_id")
-	private List<Candidates_skills> candidates_skill = new ArrayList<>();
-
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "candidates_id")
-	private List<Questionaire> questionaire = new ArrayList<>();
 
 	public Candidates() {
 		super();
 	}
 
-	public Candidates(int candidates_id, String firstname, String lastname, int exp, int noticeperiod, String phoneno,
-			String email, String status, LocalDate interview_sceduled_date, String feedback, Interviewer interviewer,
-			List<Candidates_skills> candidates_skill, List<Questionaire> questionaire) {
+	public Candidates(int candidates_id, String name, int exp, String candidate_skills, String email, String contact_no,
+			String company_name, String candidates_location, int notice_period, int expected_ctc, String shifts,
+			String relocation, String feedback, LocalDateTime interview_sceduled_date, String status, Domain domain) {
 		super();
 		this.candidates_id = candidates_id;
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.name = name;
 		this.exp = exp;
-		this.noticeperiod = noticeperiod;
-		this.phoneno = phoneno;
+		this.candidate_skills = candidate_skills;
 		this.email = email;
-		this.status = status;
-		this.interview_sceduled_date = interview_sceduled_date;
+		this.contact_no = contact_no;
+		this.company_name = company_name;
+		this.candidates_location = candidates_location;
+		this.notice_period = notice_period;
+		this.expected_ctc = expected_ctc;
+		this.shifts = shifts;
+		this.relocation = relocation;
 		this.feedback = feedback;
-		this.interviewer = interviewer;
-		this.candidates_skill = candidates_skill;
-		this.questionaire = questionaire;
+		this.interview_sceduled_date = interview_sceduled_date;
+		this.status = status;
+		this.domain = domain;
 	}
 
 	public int getCandidates_id() {
 		return candidates_id;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public void setCandidates_id(int candidates_id) {
+		this.candidates_id = candidates_id;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public String getName() {
+		return name;
 	}
 
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getExp() {
@@ -104,20 +114,12 @@ public class Candidates implements Serializable{
 		this.exp = exp;
 	}
 
-	public int getNoticeperiod() {
-		return noticeperiod;
+	public String getCandidate_skills() {
+		return candidate_skills;
 	}
 
-	public void setNoticeperiod(int noticeperiod) {
-		this.noticeperiod = noticeperiod;
-	}
-
-	public String getPhoneno() {
-		return phoneno;
-	}
-
-	public void setPhoneno(String phoneno) {
-		this.phoneno = phoneno;
+	public void setCandidate_skills(String candidate_skills) {
+		this.candidate_skills = candidate_skills;
 	}
 
 	public String getEmail() {
@@ -128,20 +130,60 @@ public class Candidates implements Serializable{
 		this.email = email;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getContact_no() {
+		return contact_no;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setContact_no(String contact_no) {
+		this.contact_no = contact_no;
 	}
 
-	public LocalDate getInterview_sceduled_date() {
-		return interview_sceduled_date;
+	public String getCompany_name() {
+		return company_name;
 	}
 
-	public void setInterview_sceduled_date(LocalDate interview_sceduled_date) {
-		this.interview_sceduled_date = interview_sceduled_date;
+	public void setCompany_name(String company_name) {
+		this.company_name = company_name;
+	}
+
+	public String getCandidates_location() {
+		return candidates_location;
+	}
+
+	public void setCandidates_location(String candidates_location) {
+		this.candidates_location = candidates_location;
+	}
+
+	public int getNotice_period() {
+		return notice_period;
+	}
+
+	public void setNotice_period(int notice_period) {
+		this.notice_period = notice_period;
+	}
+
+	public int getExpected_ctc() {
+		return expected_ctc;
+	}
+
+	public void setExpected_ctc(int expected_ctc) {
+		this.expected_ctc = expected_ctc;
+	}
+
+	public String getShifts() {
+		return shifts;
+	}
+
+	public void setShifts(String shifts) {
+		this.shifts = shifts;
+	}
+
+	public String getRelocation() {
+		return relocation;
+	}
+
+	public void setRelocation(String relocation) {
+		this.relocation = relocation;
 	}
 
 	public String getFeedback() {
@@ -152,40 +194,38 @@ public class Candidates implements Serializable{
 		this.feedback = feedback;
 	}
 
-	@JsonbTransient
-	public Interviewer getInterviewer() {
-		return interviewer;
+	public LocalDateTime getInterview_sceduled_date() {
+		return interview_sceduled_date;
 	}
 
-	public void setInterviewer(Interviewer interviewer) {
-		this.interviewer = interviewer;
-	}
-	
-	@JsonbTransient
-	public List<Candidates_skills> getCandidates_skill() {
-		return candidates_skill;
+	public void setInterview_sceduled_date(LocalDateTime interview_sceduled_date) {
+		this.interview_sceduled_date = interview_sceduled_date;
 	}
 
-	public void setCandidates_skill(List<Candidates_skills> candidates_skill) {
-		this.candidates_skill = candidates_skill;
+	public String getStatus() {
+		return status;
 	}
 
-	@JsonbTransient
-	public List<Questionaire> getQuestionaire() {
-		return questionaire;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public void setQuestionaire(List<Questionaire> questionaire) {
-		this.questionaire = questionaire;
+	public Domain getDomain() {
+		return domain;
+	}
+
+	public void setDomain(Domain domain) {
+		this.domain = domain;
 	}
 
 	@Override
 	public String toString() {
-		return "Candidates [candidates_id=" + candidates_id + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", exp=" + exp + ", noticeperiod=" + noticeperiod + ", phoneno=" + phoneno + ", email=" + email
-				+ ", status=" + status + ", interview_sceduled_date=" + interview_sceduled_date + ", feedback="
-				+ feedback + ", interviewer=" + interviewer + ", candidates_skill=" + candidates_skill
-				+ ", questionaire=" + questionaire + "]";
+		return "Candidates [candidates_id=" + candidates_id + ", name=" + name + ", exp=" + exp + ", candidate_skills="
+				+ candidate_skills + ", email=" + email + ", contact_no=" + contact_no + ", company_name="
+				+ company_name + ", candidates_location=" + candidates_location + ", notice_period=" + notice_period
+				+ ", expected_ctc=" + expected_ctc + ", shifts=" + shifts + ", relocation=" + relocation + ", feedback="
+				+ feedback + ", interview_sceduled_date=" + interview_sceduled_date + ", status=" + status + ", domain="
+				+ domain + "]";
 	}
 
 }

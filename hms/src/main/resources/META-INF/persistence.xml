@@ -8,11 +8,8 @@
 
 	<persistence-unit name="JPAPersistence"
 		transaction-type="RESOURCE_LOCAL">
-<!--  		<properties>
-			<property
-				name="javax.persistence.schema-generation.database.action"
-				value="create"></property>
-		</properties>  -->
+		<!-- <properties> <property name="javax.persistence.schema-generation.database.action" 
+			value="create"></property> </properties> -->
 	</persistence-unit>
 
 </persistence>

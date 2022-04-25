@@ -2,6 +2,7 @@ package com.hms.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +22,13 @@ public class Admin implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(nullable = false)
 	private String admin_name;
+
+	@Column(nullable = false)
 	private String admin_email;
+
+	@Column(nullable = false)
 	private String admin_password;
 
 	public Admin() {

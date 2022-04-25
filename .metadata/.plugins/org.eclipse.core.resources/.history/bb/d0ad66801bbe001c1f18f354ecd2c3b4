@@ -1,9 +1,0 @@
-package com.hms.service;
-
-import com.hms.entities.Admin;
-
-public interface AdminService {
-
-	Admin findStudentById(int id);
-
-}

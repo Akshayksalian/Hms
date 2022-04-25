@@ -1,7 +1,0 @@
-package com.hms.dao;
-
-public interface AdminDAO {
-	
-	void add (Admin admin);
-
-}

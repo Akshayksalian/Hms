@@ -1,0 +1,48 @@
+package com.hms.entities;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+/*
+ * 
+ */
+@Entity
+public class Candidates implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int candidates_id;
+
+	private String name;
+	private int exp;
+	private String candidate_skills;
+	private String email;
+	private String contact_no;
+	private String company_name;
+	private String candidates_location;
+	private int notice_period;
+	private int expected_ctc;
+	private String shifts;
+	private String status;
+	private LocalDate interview_sceduled_date;
+	private String feedback;
+
+}

@@ -1,7 +1,0 @@
-package com.hms;
-
-@Configuration
-@ComponentScan("com.hms")
-public class AppConfig {
-
-}

@@ -7,13 +7,13 @@ import com.hms.entities.Candidates;
 /*
  * 
  */
-public interface CandidatesService{
+public interface CandidatesService {
 
 	public abstract Candidates findCandidateById(int id);
 
 	public abstract List<Candidates> findAllCandidates();
 
-	public abstract void addCandidates(Candidates candidates);
-	
+	public void addCandidates(Candidates candidates);
+
 //	public abstract Candidates updateCandidates(Candidates candidates);
 }

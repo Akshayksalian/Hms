@@ -29,3 +29,12 @@
 0:0:0:0:0:0:0:1 - - [22/Apr/2022:14:24:48 +0530] "GET /hms/web/reg HTTP/1.1" 200 368
 0:0:0:0:0:0:0:1 - - [22/Apr/2022:14:24:52 +0530] "GET /hms/web/candidates HTTP/1.1" 200 847
 0:0:0:0:0:0:0:1 - - [22/Apr/2022:14:26:13 +0530] "GET /hms/web/candidates/5 HTTP/1.1" 200 218
+127.0.0.1 - - [22/Apr/2022:15:41:24 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:41:45 +0530] "GET /hms/web/reg HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:41:45 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:43:01 +0530] "POST /hms/web/reg HTTP/1.1" 201 96
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:44:06 +0530] "GET /hms/web/rcandidates HTTP/1.1" 404 713
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:44:10 +0530] "GET /hms/web/candidates HTTP/1.1" 200 847
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:47:32 +0530] "POST /hms/web/candidates/addCandidates HTTP/1.1" 201 211
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:48:54 +0530] "POST /hms/web/candidates/addCandidates HTTP/1.1" 201 211
+0:0:0:0:0:0:0:1 - - [22/Apr/2022:15:49:12 +0530] "POST /hms/web/candidates/addCandidates HTTP/1.1" 201 211
