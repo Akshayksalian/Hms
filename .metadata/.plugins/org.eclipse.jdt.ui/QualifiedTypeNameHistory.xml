@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.hms.dao.AdminDAO"/>
-    <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="com.hms.entities.Candidates_skills"/>
@@ -21,7 +19,6 @@
     <fullyQualifiedTypeName name="com.hms.service.QuestionaireService"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputFilter.Status"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
     <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
@@ -44,13 +41,11 @@
     <fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
     <fullyQualifiedTypeName name="com.hms.entities.Candidates"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="com.hms.entities.Domain"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="org.hibernate.annotations.OnDelete"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.OnDeleteAction"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+    <fullyQualifiedTypeName name="com.hms.entities.Domain"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
 </qualifiedTypeNameHistroy>

@@ -27,4 +27,19 @@ public class RegistrationServiceImpl implements RegistrationService {
 		return registerationdao.findAllAdmin();
 	}
 
+	@Override
+	public String checkAdmin(Admin admin) {
+		List<Admin> adminList = findAllAdmin();
+
+		for (Admin a : adminList) {
+			if (a.getAdmin_email().equals(admin.getAdmin_email())) {
+				if (a.getAdmin_password().equals(a.getAdmin_password())) {
+					return "Access";
+				}
+			}
+		}
+
+		return "Denied";
+	}
+
 }
