@@ -5792,3 +5792,1500 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-04-26 15:06:15.993
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:683)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:275)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:290)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:268)
+	at org.eclipse.wst.xml.ui.internal.ImageDescriptorRegistry.getImage(ImageDescriptorRegistry.java:36)
+	at org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.createPages(XMLMultiPageEditorPart.java:795)
+	at org.eclipse.ui.part.MultiPageEditorPart.createPartControl(MultiPageEditorPart.java:333)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:994)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1304)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1265)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3162)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$9(WorkbenchPage.java:3112)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3110)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3071)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:569)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:524)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:367)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:172)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:288)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:254)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:274)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:252)
+	at org.eclipse.jdt.internal.ui.navigator.OpenAndExpand.run(OpenAndExpand.java:53)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:215)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$1.open(CommonNavigatorManager.java:183)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:800)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:797)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1116)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:454)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:296)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:331)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-04-26 15:06:15.995
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:683)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:275)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:290)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:268)
+	at org.eclipse.wst.xml.ui.internal.ImageDescriptorRegistry.getImage(ImageDescriptorRegistry.java:36)
+	at org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.createPages(XMLMultiPageEditorPart.java:794)
+	at org.eclipse.ui.part.MultiPageEditorPart.createPartControl(MultiPageEditorPart.java:333)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:994)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1304)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1265)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3162)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$9(WorkbenchPage.java:3112)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3110)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3071)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:569)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:524)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:367)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:172)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:288)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:254)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:274)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:252)
+	at org.eclipse.jdt.internal.ui.navigator.OpenAndExpand.run(OpenAndExpand.java:53)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:215)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$1.open(CommonNavigatorManager.java:183)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:800)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:797)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1116)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:454)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:296)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:331)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SESSION 2022-04-26 15:18:18.015 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data D:\Workspaces\ProjectEY -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 15:18:24.196
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 15:18:24.196
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@75d61b62,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74159dc9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 15:18:24.196
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53086bdc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@254210b1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 15:18:30.147
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 15:18:30.154
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-26 15:18:30.207
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\aksha'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-04-26 15:46:35.677
+!MESSAGE Exception occurred during problem detection:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package com.hms.dao;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Candidates;
+import com.hms.entities.Domain;
+
+/*
+ * 
+ */
+@Repository
+public class CandidatesDAOImpl implements CandidatesDAO {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public void fetchCandidates() {
+		
+		
+		try(BufferedReader) {
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+//		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
+
+//		String line = "";
+//		String splitBy = ",";
+//		Candidates can = new Candidates();
+//		Domain dom = new Domain();
+//
+//		try {
+//			BufferedReader br = new BufferedReader(new FileReader("D:\\CSVDemo.csv"));
+//
+//			while ((line = br.readLine()) != null) {
+//				String[] candidate = line.split(splitBy);
+//
+//				can.setName(candidate[0]);
+//				can.setExp(Integer.parseInt(candidate[1]));
+//				can.setCandidate_skills(candidate[2]);
+//				can.setEmail(candidate[3]);
+//				can.setContact_no(candidate[4]);
+//				can.setCompany_name(candidate[5]);
+//				can.setCandidates_location(candidate[6]);
+////				dom.setDomain_id(Integer.parseInt(candidate[1]));
+////				can.setDomain(dom);
+//
+//			}
+//			br.close();
+////			context.close();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+	}
+
+	/*
+	 * Get the candidates By Id.
+	 */
+	@Override
+	public Candidates findCandidateById(int id) {
+		Candidates candidates = em.find(Candidates.class, id);
+		return candidates;
+	}
+
+	/*
+	 * Get all the candidates present in the table.
+	 */
+	@Override
+	public List<Candidates> findAllCandidates() {
+		return em.createQuery("SELECT c FROM Candidates c", Candidates.class).getResultList();
+	}
+
+	/*
+	 * Add Candidates Details into database.
+	 */
+	@Override
+	public void addCandidates(Candidates candidates) {
+		em.persist(candidates);
+	}
+
+//	@Override
+//	public Candidates updateCandidates(Candidates candidates) {
+//		return em.merge(candidates);
+//	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2022-04-26 15:46:35.677
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:326)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	... 18 more
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:35.677
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:35.677
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2022-04-26 15:46:35.677
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:326)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	... 18 more
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:35.677
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2022-04-26 15:46:35.692
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:1246)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:712)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1245)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2022-04-26 15:46:35.692
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:1246)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:712)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1245)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-04-26 15:46:37.710
+!MESSAGE Exception occurred during problem detection:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package com.hms.dao;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Repository;
+
+import com.hms.entities.Candidates;
+import com.hms.entities.Domain;
+
+/*
+ * 
+ */
+@Repository
+public class CandidatesDAOImpl implements CandidatesDAO {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public void fetchCandidates() {
+		
+		
+		try(BufferedReader ) {
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+//		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
+
+//		String line = "";
+//		String splitBy = ",";
+//		Candidates can = new Candidates();
+//		Domain dom = new Domain();
+//
+//		try {
+//			BufferedReader br = new BufferedReader(new FileReader("D:\\CSVDemo.csv"));
+//
+//			while ((line = br.readLine()) != null) {
+//				String[] candidate = line.split(splitBy);
+//
+//				can.setName(candidate[0]);
+//				can.setExp(Integer.parseInt(candidate[1]));
+//				can.setCandidate_skills(candidate[2]);
+//				can.setEmail(candidate[3]);
+//				can.setContact_no(candidate[4]);
+//				can.setCompany_name(candidate[5]);
+//				can.setCandidates_location(candidate[6]);
+////				dom.setDomain_id(Integer.parseInt(candidate[1]));
+////				can.setDomain(dom);
+//
+//			}
+//			br.close();
+////			context.close();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+	}
+
+	/*
+	 * Get the candidates By Id.
+	 */
+	@Override
+	public Candidates findCandidateById(int id) {
+		Candidates candidates = em.find(Candidates.class, id);
+		return candidates;
+	}
+
+	/*
+	 * Get all the candidates present in the table.
+	 */
+	@Override
+	public List<Candidates> findAllCandidates() {
+		return em.createQuery("SELECT c FROM Candidates c", Candidates.class).getResultList();
+	}
+
+	/*
+	 * Add Candidates Details into database.
+	 */
+	@Override
+	public void addCandidates(Candidates candidates) {
+		em.persist(candidates);
+	}
+
+//	@Override
+//	public Candidates updateCandidates(Candidates candidates) {
+//		return em.merge(candidates);
+//	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2022-04-26 15:46:37.710
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:326)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	... 18 more
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:37.710
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:37.710
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2022-04-26 15:46:37.710
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:326)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	... 18 more
+Caused by: java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2022-04-26 15:46:37.710
+!MESSAGE class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1072)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:274)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2022-04-26 15:46:37.726
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:1246)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:712)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1245)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2022-04-26 15:46:37.726
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding cannot be cast to class org.eclipse.jdt.internal.compiler.lookup.VariableBinding (org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding and org.eclipse.jdt.internal.compiler.lookup.VariableBinding are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @59294f29)
+	at org.eclipse.jdt.internal.compiler.ast.TryStatement.generateCode(TryStatement.java:575)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:354)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.generateCode(AbstractMethodDeclaration.java:291)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:761)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.generateCode(TypeDeclaration.java:831)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.generateCode(CompilationUnitDeclaration.java:412)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:1246)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:712)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1245)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-04-26 17:15:33.156 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 17:15:43.606
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 17:15:43.606
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7cf166db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@68303aad,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 17:15:43.606
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@37a36194,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d0acb8f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 17:15:55.019
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 17:15:55.035
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-26 17:15:55.113
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\aksha'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-04-26 17:31:56.480
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:683)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:275)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:290)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:268)
+	at org.eclipse.wst.xml.ui.internal.ImageDescriptorRegistry.getImage(ImageDescriptorRegistry.java:36)
+	at org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.createPages(XMLMultiPageEditorPart.java:795)
+	at org.eclipse.ui.part.MultiPageEditorPart.createPartControl(MultiPageEditorPart.java:333)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:994)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:170)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:188)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.showElementInWindow(ModelServiceImpl.java:660)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.bringToTop(ModelServiceImpl.java:624)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.delegateBringToTop(PartServiceImpl.java:787)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.bringToTop(PartServiceImpl.java:401)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1261)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3208)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$9(WorkbenchPage.java:3112)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3110)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3071)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:569)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:524)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:367)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:172)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:288)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:254)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:274)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:252)
+	at org.eclipse.jdt.internal.ui.navigator.OpenAndExpand.run(OpenAndExpand.java:53)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:215)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$1.open(CommonNavigatorManager.java:183)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:800)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:797)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1116)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:454)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:296)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:331)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-04-26 17:31:56.482
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:683)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:275)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:290)
+	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:268)
+	at org.eclipse.wst.xml.ui.internal.ImageDescriptorRegistry.getImage(ImageDescriptorRegistry.java:36)
+	at org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.createPages(XMLMultiPageEditorPart.java:794)
+	at org.eclipse.ui.part.MultiPageEditorPart.createPartControl(MultiPageEditorPart.java:333)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:994)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:170)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:188)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.showElementInWindow(ModelServiceImpl.java:660)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.bringToTop(ModelServiceImpl.java:624)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.delegateBringToTop(PartServiceImpl.java:787)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.bringToTop(PartServiceImpl.java:401)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1261)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3208)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$9(WorkbenchPage.java:3112)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3110)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3071)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:569)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:524)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:367)
+	at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor(EditorUtility.java:172)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:288)
+	at org.eclipse.jdt.ui.actions.OpenAction.run(OpenAction.java:254)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:274)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:252)
+	at org.eclipse.jdt.internal.ui.navigator.OpenAndExpand.run(OpenAndExpand.java:53)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:215)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$1.open(CommonNavigatorManager.java:183)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:800)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:797)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1116)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:454)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:296)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:331)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SESSION 2022-04-26 17:32:06.355 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 17:32:12.114
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 17:32:12.114
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@362e6fe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1259b2a5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 17:32:12.114
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6779af40,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7cf166db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 17:32:29.569
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 17:32:29.585
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-26 17:32:29.647
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\aksha'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-04-26 19:38:56.105 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 19:39:02.533
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 19:39:02.533
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a7427f9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@155767a7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 19:39:02.533
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5418a659,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46067a74,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 19:39:09.590
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-26 19:39:09.605
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-26 19:39:09.668
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\aksha'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-04-27 09:59:30.591 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-27 09:59:40.737
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-27 09:59:40.737
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6956081d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5d94c50e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-27 09:59:40.737
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@135f160e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@230e163b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-27 09:59:45.738
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-04-27 09:59:45.744
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-27 09:59:45.805
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\aksha'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

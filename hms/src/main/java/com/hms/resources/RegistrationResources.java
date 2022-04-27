@@ -1,7 +1,10 @@
 package com.hms.resources;
 
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,15 +22,20 @@ public class RegistrationResources {
 
 	@Autowired
 	private RegistrationService registrationService;
+	
+	@GET
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<Admin> getAllAdmin() {
+		return registrationService.findAllAdmin();
+	}
 
-
-//	@POST
-//	@Consumes({ MediaType.APPLICATION_JSON })
-//	@Produces({ MediaType.APPLICATION_JSON })
-//	public Response addResponse(Admin admin) {
-//		registrationService.addAdmin(admin);
-//		return Response.status(Status.CREATED).entity(admin).build();
-//	}
+	@POST
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response addResponse(Admin admin) {
+		registrationService.addAdmin(admin);
+		return Response.status(Status.CREATED).entity(admin).build();
+	}
 	
 	@POST
 	@Path("/login")
@@ -36,10 +44,5 @@ public class RegistrationResources {
 		return registrationService.checkAdmin(admin);
 	}
 	
-	@POST
-	@Consumes({ MediaType.APPLICATION_JSON })
-	public void addResponse(Admin admin) {
-		registrationService.addAdmin(admin);
-	}
 
 }

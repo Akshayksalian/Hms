@@ -15,5 +15,5 @@ public interface CandidatesService {
 
 	public void addCandidates(Candidates candidates);
 
-//	public abstract Candidates updateCandidates(Candidates candidates);
+	public abstract Candidates updateCandidatesQuestionnaires(Candidates candidates);
 }

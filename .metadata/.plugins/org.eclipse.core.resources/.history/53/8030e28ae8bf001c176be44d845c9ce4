@@ -1,7 +1,0 @@
-package com.hms.dao;
-
-public interface QuestionaireDAO {
-	
-	public abstract void addAnswer();
-
-}

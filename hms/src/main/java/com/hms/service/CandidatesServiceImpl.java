@@ -36,25 +36,18 @@ public class CandidatesServiceImpl implements CandidatesService {
 		dao.addCandidates(candidates);
 	}
 
-//	@Override
-//	@Transactional
-//	public Candidates updateCandidates(Candidates candidates) {
-//		Candidates c = findCandidateById(candidates.getCandidates_id());
-//		System.out.println(candidates.getCandidates_id());
-//		if (c == null) {
-//			throw new IllegalArgumentException("Id not Found " + candidates.getCandidates_id());
-//		}
-//		c.setFirstname(candidates.getFirstname());
-//		c.setLastname(candidates.getLastname());
-//		c.setExp(candidates.getExp());
-//		c.setNoticeperiod(candidates.getNoticeperiod());
-//		c.setPhoneno(candidates.getPhoneno());
-//		c.setEmail(candidates.getEmail());
-//		c.setInterview_sceduled_date(candidates.getInterview_sceduled_date());
-//		c.setFeedback(candidates.getFeedback());
-//		c.setInterviewer(candidates.getInterviewer());
-//		c.setCandidates_skill(candidates.getCandidates_skill());
-//		c.setQuestionaire(candidates.getQuestionaire());
-//		return dao.updateCandidates(c);
-//	}
+	@Override
+	@Transactional
+	public Candidates updateCandidatesQuestionnaires(Candidates candidates) {
+		Candidates c = findCandidateById(candidates.getCandidates_id());
+		System.out.println(candidates.getCandidates_id());
+		if (c == null) {
+			throw new IllegalArgumentException("Id not Found " + candidates.getCandidates_id());
+		}
+		c.setNotice_period(candidates.getNotice_period());
+		c.setExpected_ctc(candidates.getExpected_ctc());
+		c.setShifts(candidates.getShifts());
+		c.setRelocation(candidates.getRelocation());
+		return dao.updateCandidatesQuestionnaires(c);
+	}
 }

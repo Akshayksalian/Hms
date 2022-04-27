@@ -1,7 +1,0 @@
-package com.hms.dao;
-
-import java.io.Serializable;
-
-public class QuestionaireDAO implements Serializableer{
-
-}

@@ -1,9 +1,0 @@
-package com.hms.service;
-
-import com.hms.entities.Questionaire;
-
-public interface QuestionaireService {
-	
-	public abstract void addAnswer(Questionaire questionaire);
-
-}
