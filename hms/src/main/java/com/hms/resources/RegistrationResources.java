@@ -1,6 +1,5 @@
 package com.hms.resources;
 
-
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -40,8 +39,9 @@ public class RegistrationResources {
 	@POST
 	@Path("/login")
 	@Consumes({ MediaType.APPLICATION_JSON })
-	public String checkLogin(Admin admin) {
-		return registrationService.checkAdmin(admin);
+	public Response checkLogin(Admin admin) {
+		String Auth = registrationService.checkAdmin(admin);
+		return Response.status(Status.OK).entity(Auth).build();
 	}
 	
 

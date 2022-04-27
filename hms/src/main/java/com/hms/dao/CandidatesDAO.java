@@ -16,6 +16,8 @@ public interface CandidatesDAO {
 	public void addCandidates(Candidates candidates);
 	
 	public void fetchCandidates();
+	
+	public void deleteCandidates(Candidates candidates);
 
 	public abstract Candidates updateCandidatesQuestionnaires(Candidates candidates);
 

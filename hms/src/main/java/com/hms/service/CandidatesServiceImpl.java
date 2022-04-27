@@ -50,4 +50,14 @@ public class CandidatesServiceImpl implements CandidatesService {
 		c.setRelocation(candidates.getRelocation());
 		return dao.updateCandidatesQuestionnaires(c);
 	}
+	
+	@Override
+	@Transactional
+	public void deleteCandidates(int id) {
+		Candidates u = findCandidateById(id);
+		if (u == null) {
+			throw new IllegalArgumentException("ID not found " + id);
+		}
+		dao.deleteCandidates(u);
+	}
 }

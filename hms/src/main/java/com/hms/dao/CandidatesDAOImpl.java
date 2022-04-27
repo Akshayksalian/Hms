@@ -99,5 +99,10 @@ public class CandidatesDAOImpl implements CandidatesDAO {
 	public Candidates updateCandidatesQuestionnaires(Candidates candidates) {
 		return em.merge(candidates);
 	}
+	
+	@Override
+	public void deleteCandidates(Candidates candidates) {
+		em.remove(candidates);
+	}
 
 }
