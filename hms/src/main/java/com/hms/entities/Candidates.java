@@ -11,12 +11,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToOne;
 
 /*
  * 
  */
 @Entity
+
+@NamedNativeQueries({
+	@NamedNativeQuery(name="byDomainId",query = "select * from candidates where job_id = ?",resultClass = Candidates.class)
+})
 public class Candidates implements Serializable {
 
 	/**

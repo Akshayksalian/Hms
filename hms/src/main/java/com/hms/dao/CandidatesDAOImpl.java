@@ -9,8 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
+import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 
 import com.hms.entities.Candidates;
@@ -103,6 +108,13 @@ public class CandidatesDAOImpl implements CandidatesDAO {
 	@Override
 	public void deleteCandidates(Candidates candidates) {
 		em.remove(candidates);
+	}
+
+	
+	@Override
+	public List<Candidates> findByDomainId(int id) {
+		List<Candidates> candidates = em.createNamedQuery("byDomainId",Candidates.class).setParameter(1,id).getResultList();
+		return candidates;
 	}
 
 }

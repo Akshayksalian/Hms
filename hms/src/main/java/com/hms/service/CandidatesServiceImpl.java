@@ -60,4 +60,9 @@ public class CandidatesServiceImpl implements CandidatesService {
 		}
 		dao.deleteCandidates(u);
 	}
+
+	@Override
+	public List<Candidates> findByDomainId(int id) {
+		return dao.findByDomainId(id);
+	}
 }

@@ -1,2 +1,4 @@
 1650964036616	Rename type 'Main'
 1651036838870	Delete element
+1651112708747	Infer generic type arguments
+1651112732276	Extract local variable 'resultList'

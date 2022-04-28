@@ -18,4 +18,6 @@ public interface CandidatesService {
 	public abstract Candidates updateCandidatesQuestionnaires(Candidates candidates);
 	
 	public void deleteCandidates(int id);
+	
+	public abstract List<Candidates> findByDomainId(int id);
 }

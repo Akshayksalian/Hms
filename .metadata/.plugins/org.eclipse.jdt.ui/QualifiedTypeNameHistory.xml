@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.hms.service.CandidatesService"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
-    <fullyQualifiedTypeName name="com.hms.dao.QuestionaireDAO"/>
-    <fullyQualifiedTypeName name="com.hms.service.QuestionaireService"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputFilter.Status"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
     <fullyQualifiedTypeName name="com.hms.entities.Questionaire"/>
@@ -19,7 +13,6 @@
     <fullyQualifiedTypeName name="javax.ws.rs.POST"/>
     <fullyQualifiedTypeName name="com.hms.service.AdminService"/>
     <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -41,23 +34,30 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
-    <fullyQualifiedTypeName name="com.hms.dao.CandidatesDAOImpl"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
     <fullyQualifiedTypeName name="javax.persistence.criteria.Path"/>
     <fullyQualifiedTypeName name="java.nio.file.Path"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.nio.file.Paths"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.hms.entities.Candidates"/>
     <fullyQualifiedTypeName name="com.hms.entities.Domain"/>
     <fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
     <fullyQualifiedTypeName name="com.hms.entities.InterviewerIdentity"/>
     <fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response.Status"/>
+    <fullyQualifiedTypeName name="com.hms.dao.CandidatesDAOImpl"/>
+    <fullyQualifiedTypeName name="javax.persistence.Query"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+    <fullyQualifiedTypeName name="org.hibernate.query.NativeQuery"/>
+    <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
+    <fullyQualifiedTypeName name="javax.persistence.NamedNativeQueries"/>
+    <fullyQualifiedTypeName name="javax.persistence.NamedNativeQuery"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.hms.entities.Candidates"/>
 </qualifiedTypeNameHistroy>

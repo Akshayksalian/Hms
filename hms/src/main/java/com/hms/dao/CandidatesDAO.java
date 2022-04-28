@@ -20,5 +20,7 @@ public interface CandidatesDAO {
 	public void deleteCandidates(Candidates candidates);
 
 	public abstract Candidates updateCandidatesQuestionnaires(Candidates candidates);
+	
+	public abstract List<Candidates> findByDomainId(int id);
 
 }

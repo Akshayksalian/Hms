@@ -47,6 +47,13 @@ public class CandidatesResources {
 		System.out.println("I Am Object");
 		return candidatesService.findCandidateById(id);
 	}
+	
+	@GET
+	@Path("/domain/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Candidates> getCandidatesByDomainId(@PathParam("id") int id){
+		return candidatesService.findByDomainId(id);
+	}
 
 	/*
 	 * New Candidates can be added.
