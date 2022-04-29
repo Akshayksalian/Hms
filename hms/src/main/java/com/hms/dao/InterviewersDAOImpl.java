@@ -7,12 +7,12 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
+import com.hms.entities.Candidates;
 import com.hms.entities.Interviewer;
-import com.hms.entities.InterviewerIdentity;
 
 @Repository
 public class InterviewersDAOImpl implements InterviewersDAO {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -20,17 +20,18 @@ public class InterviewersDAOImpl implements InterviewersDAO {
 	 * Get the Interviewers By Id.
 	 */
 	@Override
-	public InterviewerIdentity findInterviewerById(int id) {
-		InterviewerIdentity interviewerIdentity = em.find(InterviewerIdentity.class, id);
-		return interviewerIdentity;
+	public Interviewer findInterviewerById(int id, String availability) {
+		Interviewer interviewer = em.createNamedQuery("byInterviwerId", Interviewer.class).setParameter(1, id)
+				.setParameter(2, availability).getSingleResult();
+		return interviewer;
 	}
-	
+
 	/*
 	 * Get all the Interviewer present in the table.
 	 */
 	@Override
 	public List<Interviewer> findAllInterviewers() {
-		  return em.createQuery("SELECT i FROM Interviewer i", Interviewer.class).getResultList();   
+		return em.createQuery("SELECT i FROM Interviewer i", Interviewer.class).getResultList();
 	}
 
 	/*
@@ -39,5 +40,15 @@ public class InterviewersDAOImpl implements InterviewersDAO {
 	@Override
 	public void addInterviewer(Interviewer interviewer) {
 		em.persist(interviewer);
+	}
+
+	@Override
+	public Interviewer updateInterviewer(Interviewer interviewer,Candidates candidates) {
+		return em.merge(interviewer);
+	}
+
+	@Override
+	public List<Interviewer> preferredInterviewers(Candidates cand) {
+		return findAllInterviewers();
 	}
 }

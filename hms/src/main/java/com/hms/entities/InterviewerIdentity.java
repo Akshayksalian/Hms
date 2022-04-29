@@ -1,7 +1,6 @@
 package com.hms.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -19,13 +18,13 @@ public class InterviewerIdentity implements Serializable{
 	private int interviewers_id;
 	
 	@Column(nullable = false)
-	private LocalDateTime availability;
+	private String availability;
 	
 	public InterviewerIdentity() {
 		super();
 	}
 
-	public InterviewerIdentity(int interviewers_id, LocalDateTime slot) {
+	public InterviewerIdentity(int interviewers_id, String slot) {
 		super();
 		this.interviewers_id = interviewers_id;
 		this.availability = slot;
@@ -39,11 +38,11 @@ public class InterviewerIdentity implements Serializable{
 		this.interviewers_id = interviewers_id;
 	}
 
-	public LocalDateTime getAvailability() {
+	public String getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(LocalDateTime availability) {
+	public void setAvailability(String availability) {
 		this.availability = availability;
 	}
 

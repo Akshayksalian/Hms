@@ -9,14 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.NamedQuery;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
-import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.hms.entities.Candidates;
 /*
@@ -27,8 +23,10 @@ public class CandidatesDAOImpl implements CandidatesDAO {
 
 	@PersistenceContext
 	private EntityManager em;
+	
+//	@PersistenceContext
+//	private TransactionM et;
 
-	@Override
 	public void fetchCandidates() {
 		
 		String file = "D:\\CSVDemo.csv";
@@ -97,7 +95,9 @@ public class CandidatesDAOImpl implements CandidatesDAO {
 	 */
 	@Override
 	public void addCandidates(Candidates candidates) {
+		em.getTransaction().begin();
 		em.persist(candidates);
+		em.getTransaction().commit();
 	}
 
 	@Override

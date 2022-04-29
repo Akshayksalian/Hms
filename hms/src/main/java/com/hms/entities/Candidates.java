@@ -1,7 +1,6 @@
 package com.hms.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -28,7 +27,7 @@ public class Candidates implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2613916106920295706L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,7 +59,7 @@ public class Candidates implements Serializable {
 	private String shifts;
 	private String relocation;
 	private String feedback;
-	private LocalDateTime interview_sceduled_date;
+	private String interview_sceduled_date;
 	private String status;
 	
 	@ManyToOne
@@ -76,7 +75,7 @@ public class Candidates implements Serializable {
 
 	public Candidates(int candidates_id, String name, int exp, String candidate_skills, String email, String contact_no,
 			String company_name, String candidates_location, int notice_period, int expected_ctc, String shifts,
-			String relocation, String feedback, LocalDateTime interview_sceduled_date, String status, Domain domain) {
+			String relocation, String feedback, String interview_sceduled_date, String status, Domain domain) {
 		super();
 		this.candidates_id = candidates_id;
 		this.name = name;
@@ -200,11 +199,11 @@ public class Candidates implements Serializable {
 		this.feedback = feedback;
 	}
 
-	public LocalDateTime getInterview_sceduled_date() {
+	public String getInterview_sceduled_date() {
 		return interview_sceduled_date;
 	}
 
-	public void setInterview_sceduled_date(LocalDateTime interview_sceduled_date) {
+	public void setInterview_sceduled_date(String interview_sceduled_date) {
 		this.interview_sceduled_date = interview_sceduled_date;
 	}
 
@@ -222,6 +221,14 @@ public class Candidates implements Serializable {
 
 	public void setDomain(Domain domain) {
 		this.domain = domain;
+	}
+
+	public Interviewer getInterviewer() {
+		return interviewer;
+	}
+
+	public void setInterviewer(Interviewer interviewer) {
+		this.interviewer = interviewer;
 	}
 
 	@Override

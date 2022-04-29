@@ -33,7 +33,7 @@ public class CandidatesResources {
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Candidates> getAdmins() {
+	public List<Candidates> getCandidates() {
 		return candidatesService.findAllCandidates();
 	}
 
@@ -43,7 +43,7 @@ public class CandidatesResources {
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Candidates getAdminById(@PathParam("id") int id) {
+	public Candidates getCandidatesById(@PathParam("id") int id) {
 		System.out.println("I Am Object");
 		return candidatesService.findCandidateById(id);
 	}
