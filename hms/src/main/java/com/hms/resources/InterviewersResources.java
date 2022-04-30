@@ -1,8 +1,8 @@
 package com.hms.resources;
+
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -18,13 +18,12 @@ import com.hms.entities.Candidates;
 import com.hms.entities.Interviewer;
 import com.hms.service.InterviewersService;
 
-
 @Path("/interviewers")
 public class InterviewersResources {
-	
+
 	@Autowired
 	private InterviewersService interviewerService;
-	
+
 	/*
 	 * Fetches interviewer Detail By Id.
 	 */
@@ -43,7 +42,6 @@ public class InterviewersResources {
 //	public List<Interviewer> getAdmins() {
 //		return interviewerService.findAllInterviewers();
 //	}
-	
 
 	/*
 	 * New interviewer can be added.
@@ -56,8 +54,7 @@ public class InterviewersResources {
 //		interviewerService.addInterviewer(interviewer);
 //		return Response.status(Status.CREATED).entity(interviewer).build();
 //	}
-	
-	
+
 	/*
 	 * Assign
 	 */
@@ -66,10 +63,10 @@ public class InterviewersResources {
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUpdateById(@PathParam("id") int candId, Interviewer interviewer) {
-		Interviewer i = interviewerService.UpdateInterviewer(interviewer,candId);
+		Interviewer i = interviewerService.UpdateInterviewer(interviewer, candId);
 		return Response.status(Status.OK).entity(i).build();
 	}
-	
+
 	@POST
 	@Path("/getInterviewers")
 	@Consumes(MediaType.APPLICATION_JSON)

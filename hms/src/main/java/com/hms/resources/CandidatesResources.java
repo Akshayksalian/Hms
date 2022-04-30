@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -34,6 +33,7 @@ public class CandidatesResources {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Candidates> getCandidates() {
+//			candidatesService.fetchCandidates();
 		return candidatesService.findAllCandidates();
 	}
 
@@ -55,17 +55,17 @@ public class CandidatesResources {
 		return candidatesService.findByDomainId(id);
 	}
 
-	/*
-	 * New Candidates can be added.
-	 */
-	@POST
-	@Path("/addCandidates")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response addCandidatesResponse(Candidates candidates) {
-		candidatesService.addCandidates(candidates);
-		return Response.status(Status.CREATED).entity(candidates).build();
-	}
+//	/*
+//	 * New Candidates can be added.
+//	 */
+//	@POST
+//	@Path("/addCandidates")
+//	@Consumes(MediaType.APPLICATION_JSON)
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public Response addCandidatesResponse(Candidates candidates) {
+//		candidatesService.addCandidates(candidates);
+//		return Response.status(Status.CREATED).entity(candidates).build();
+//	}
 
 	/*
 	 * Updating the existing candidates details

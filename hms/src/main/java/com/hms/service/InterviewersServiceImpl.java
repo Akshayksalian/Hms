@@ -77,6 +77,11 @@ public class InterviewersServiceImpl implements InterviewersService {
 			}
 		}
 
+		/* 
+		 * sort tree map based on the skills and the experience
+		 *  
+		*/
+		
 		List<Interviewer> finalList = new ArrayList<Interviewer>(interviewerData.values());
 
 		List<Interviewer> result = new ArrayList<Interviewer>();

@@ -49,7 +49,7 @@
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/hmsdb" />
+			value="jdbc:mysql://localhost:3306/eyhmsdb" />
 		<property name="username" value="root" />
 		<property name="password" value="akshay@4458" />
 	</bean>

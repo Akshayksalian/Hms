@@ -54,8 +54,11 @@ public class Candidates implements Serializable {
 	@Column(nullable = false)
 	private String candidates_location;
 	
-	private int notice_period;
-	private int expected_ctc;
+	@Column(nullable=true)
+	private String notice_period;
+	
+	@Column(nullable=true)
+	private String expected_ctc;
 	private String shifts;
 	private String relocation;
 	private String feedback;
@@ -74,7 +77,7 @@ public class Candidates implements Serializable {
 	}
 
 	public Candidates(int candidates_id, String name, int exp, String candidate_skills, String email, String contact_no,
-			String company_name, String candidates_location, int notice_period, int expected_ctc, String shifts,
+			String company_name, String candidates_location, String notice_period, String expected_ctc, String shifts,
 			String relocation, String feedback, String interview_sceduled_date, String status, Domain domain) {
 		super();
 		this.candidates_id = candidates_id;
@@ -159,19 +162,19 @@ public class Candidates implements Serializable {
 		this.candidates_location = candidates_location;
 	}
 
-	public int getNotice_period() {
+	public String getNotice_period() {
 		return notice_period;
 	}
 
-	public void setNotice_period(int notice_period) {
+	public void setNotice_period(String notice_period) {
 		this.notice_period = notice_period;
 	}
 
-	public int getExpected_ctc() {
+	public String getExpected_ctc() {
 		return expected_ctc;
 	}
 
-	public void setExpected_ctc(int expected_ctc) {
+	public void setExpected_ctc(String expected_ctc) {
 		this.expected_ctc = expected_ctc;
 	}
 
