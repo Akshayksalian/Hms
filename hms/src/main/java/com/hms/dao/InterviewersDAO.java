@@ -15,5 +15,5 @@ public interface InterviewersDAO {
 	
 	public abstract Interviewer updateInterviewer(Interviewer interviewer,Candidates ca);
 
-	public List<Interviewer> preferredInterviewers(Candidates cand);
+	public List<Interviewer> preferredInterviewers(int id);
 }

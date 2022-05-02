@@ -15,6 +15,6 @@ public interface InterviewersService {
 	
 	public abstract Interviewer UpdateInterviewer(Interviewer interviewer,int candId);
 	
-	public List<Interviewer> preferredInterviewers(Candidates cand);
+	public List<Interviewer> preferredInterviewers(int id);
 
 }

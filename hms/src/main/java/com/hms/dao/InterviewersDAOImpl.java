@@ -48,7 +48,7 @@ public class InterviewersDAOImpl implements InterviewersDAO {
 	}
 
 	@Override
-	public List<Interviewer> preferredInterviewers(Candidates cand) {
+	public List<Interviewer> preferredInterviewers(int id) {
 		return findAllInterviewers();
 	}
 }

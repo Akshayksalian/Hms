@@ -59,10 +59,11 @@ public class InterviewersServiceImpl implements InterviewersService {
 		return dao.updateInterviewer(i, c);
 	}
 
-	public List<Interviewer> preferredInterviewers(Candidates cand) {
+	@Override
+	public List<Interviewer> preferredInterviewers(int id) {
 
 		List<Interviewer> interviewersList = findAllInterviewers();
-		Candidates candidates = candao.findCandidateById(cand.getCandidates_id());
+		Candidates candidates = candao.findCandidateById(id);
 		List<String> candidatesSkills = Arrays.asList(candidates.getCandidate_skills().split(","));
 
 		Map<Long, Interviewer> interviewerData = new TreeMap<>();
