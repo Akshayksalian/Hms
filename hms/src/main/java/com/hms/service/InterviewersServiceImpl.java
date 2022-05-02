@@ -3,8 +3,11 @@ package com.hms.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +69,7 @@ public class InterviewersServiceImpl implements InterviewersService {
 		Candidates candidates = candao.findCandidateById(id);
 		List<String> candidatesSkills = Arrays.asList(candidates.getCandidate_skills().split(","));
 
-		Map<Long, Interviewer> interviewerData = new TreeMap<>();
+		Map<Long, Interviewer> interviewerData = new HashMap<>();
 
 		for (int i = 0; i < interviewersList.size(); i++) {
 			if (interviewersList.get(i).getExp() > candidates.getExp()
@@ -77,14 +80,28 @@ public class InterviewersServiceImpl implements InterviewersService {
 				interviewerData.put(stream, interviewersList.get(i));
 			}
 		}
-
-		/* 
-		 * sort tree map based on the skills and the experience
-		 *  
-		*/
 		
-		List<Interviewer> finalList = new ArrayList<Interviewer>(interviewerData.values());
+		Set<Entry<Long,Interviewer>> entrySet = interviewerData.entrySet();
+		
+		List<Entry<Long,Interviewer>> list = new ArrayList<>(entrySet);
+		
+		Collections.sort(list,(o1, o2) -> {
+			if(o2.getKey()!=o1.getKey()) {
+				return o2.getKey().compareTo(o1.getKey());
+			} else {
+				Integer into2= o2.getValue().getExp();
+				Integer into1 = o1.getValue().getExp();
+				return into2.compareTo(into1);
+			}
+		});
 
+		List<Interviewer> finalList = new ArrayList<Interviewer>();
+
+		
+		list.forEach(e->{
+			finalList.add(e.getValue());
+		});
+		
 		List<Interviewer> result = new ArrayList<Interviewer>();
 
 		if (finalList.size() > 5) {

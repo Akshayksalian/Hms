@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
@@ -39,7 +37,6 @@
     <fullyQualifiedTypeName name="javax.transaction.TransactionManager"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.TreeMap"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.hms.entities.Candidates"/>
@@ -49,9 +46,6 @@
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response.Status"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="com.hms.entities.Interviewer"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="com.hms.comparators.ExperienceComparator"/>
     <fullyQualifiedTypeName name="com.hms.service.CandidatesService"/>
     <fullyQualifiedTypeName name="com.hms.service.CandidatesServiceImpl"/>
@@ -60,4 +54,10 @@
     <fullyQualifiedTypeName name="com.hms.entities.Domain"/>
     <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="com.hms.entities.Interviewer"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
 </qualifiedTypeNameHistroy>
