@@ -1,13 +1,17 @@
 package com.hms.entities;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/*
+ * Composite Key for the interviewer table.
+ */
 @Embeddable
-public class InterviewerIdentity implements Serializable{
+public class InterviewerIdentity implements Serializable {
 
 	/**
 	 * 
@@ -16,18 +20,18 @@ public class InterviewerIdentity implements Serializable{
 
 	@Column(nullable = false)
 	private int interviewers_id;
-	
+
 	@Column(nullable = false)
-	private String availability;
-	
+	private LocalDateTime availability;
+
 	public InterviewerIdentity() {
 		super();
 	}
 
-	public InterviewerIdentity(int interviewers_id, String slot) {
+	public InterviewerIdentity(int interviewers_id, LocalDateTime availability) {
 		super();
 		this.interviewers_id = interviewers_id;
-		this.availability = slot;
+		this.availability = availability;
 	}
 
 	public int getInterviewers_id() {
@@ -38,11 +42,11 @@ public class InterviewerIdentity implements Serializable{
 		this.interviewers_id = interviewers_id;
 	}
 
-	public String getAvailability() {
+	public LocalDateTime getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(String availability) {
+	public void setAvailability(LocalDateTime availability) {
 		this.availability = availability;
 	}
 
@@ -63,6 +67,9 @@ public class InterviewerIdentity implements Serializable{
 		return Objects.equals(availability, other.availability) && interviewers_id == other.interviewers_id;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "InterviewerIdentity [interviewers_id=" + interviewers_id + ", availability=" + availability + "]";
+	}
 
 }

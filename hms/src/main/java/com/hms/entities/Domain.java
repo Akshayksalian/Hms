@@ -13,13 +13,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/*
+ * Job Domain Table.
+ */
 @Entity
 public class Domain implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3721816173119722973L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

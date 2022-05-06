@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hms.entities.Candidates;
 import com.hms.service.CandidatesService;
+import com.hms.service.InterviewersService;
 
 /*
  * 
@@ -26,49 +27,55 @@ public class CandidatesResources {
 
 	@Autowired
 	private CandidatesService candidatesService;
-
+	
+	@Autowired
+	private InterviewersService interviewersService;
+	
 	/*
-	 * All the Candidates details will be displayed.
-	 */
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Candidates> getCandidates() {
-//			candidatesService.fetchCandidates();
-		return candidatesService.findAllCandidates();
-	}
-
-	/*
-	 * Fetches Candidate Detail By Id.
+	 * Get Candidate Detail By Id.
 	 */
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Candidates getCandidatesById(@PathParam("id") int id) {
-		System.out.println("I Am Object");
 		return candidatesService.findCandidateById(id);
 	}
 	
+
+	/*
+	 * Fetch data from the CSV file.
+	 */
+	@GET
+	@Path("/fetchData")
+	public void fetchFromCsv() {
+		candidatesService.fetchCandidates();
+		interviewersService.fetchInterviewers();
+	}
+
+	/*
+	 * Get Candidate by there domain id.
+	 */
 	@GET
 	@Path("/domain/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Candidates> getCandidatesByDomainId(@PathParam("id") int id){
+	public List<Candidates> getCandidatesByDomainId(@PathParam("id") int id) {
 		return candidatesService.findByDomainId(id);
 	}
 
-//	/*
-//	 * New Candidates can be added.
-//	 */
-//	@POST
-//	@Path("/addCandidates")
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Response addCandidatesResponse(Candidates candidates) {
-//		candidatesService.addCandidates(candidates);
-//		return Response.status(Status.CREATED).entity(candidates).build();
-//	}
-
+	@GET
+	@Path("/hired/{id}")
+	public void updateHire(@PathParam("id") int id) {
+		 candidatesService.updateHire(id);
+	}
+	
+	@GET
+	@Path("/reject/{id}")
+	public void updateReject(@PathParam("id") int id) {
+		 candidatesService.updateReject(id);
+	}
+	
 	/*
-	 * Updating the existing candidates details
+	 * Updating the existing candidates questionnaire details.
 	 */
 	@PUT
 	@Path("/que")
@@ -79,6 +86,21 @@ public class CandidatesResources {
 		return Response.status(Status.OK).entity(c).build();
 	}
 
+	/*
+	 * Updated Candidates feedback.
+	 */
+	@PUT
+	@Path("/feedback")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response updateCandidateFeedback(Candidates candidates) {
+		Candidates c = candidatesService.updateCandidatesFeedback(candidates);
+		return Response.status(Status.OK).entity(c).build();
+	}
+
+	/*
+	 * Delete Candidate based on the id provided.
+	 */
 	@DELETE
 	@Path("/{id}")
 	@Produces({ MediaType.APPLICATION_JSON })
@@ -86,4 +108,14 @@ public class CandidatesResources {
 		candidatesService.deleteCandidates(id);
 		return Response.status(Status.OK).entity("Deleted Succesfuly").build();
 	}
+
+//	/*
+//	 * All the Candidates details will be displayed.
+//	 */
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public List<Candidates> getCandidates() {
+//		return candidatesService.findAllCandidates();
+//	}
+
 }

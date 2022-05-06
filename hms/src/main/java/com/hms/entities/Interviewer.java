@@ -8,7 +8,7 @@ import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
 /*
- * 
+ * Interviewer Table
  */
 @Entity
 @NamedNativeQueries({

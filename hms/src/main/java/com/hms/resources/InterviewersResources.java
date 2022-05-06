@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.Response.Status;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.hms.entities.Candidates;
 import com.hms.entities.Interviewer;
 import com.hms.service.InterviewersService;
 
@@ -26,8 +24,32 @@ public class InterviewersResources {
 	private InterviewersService interviewerService;
 
 	/*
-	 * Fetches interviewer Detail By Id.
+	 * Assign an Interviewer to a Candidate.
 	 */
+	@POST
+	@Path("/assign/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getUpdateById(@PathParam("id") int candId, Interviewer interviewer) {
+		System.out.println(interviewer);
+		Interviewer i = interviewerService.UpdateInterviewer(interviewer, candId);
+		return Response.status(Status.OK).entity(i).build();
+	}
+
+	/*
+	 * Get List of interviewer based on a particular candidate.
+	 */
+	@GET
+	@Path("/getInterviewers/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Interviewer> algoInterviewers(@PathParam("id") int candId) {
+		return interviewerService.preferredInterviewers(candId);
+	}
+
+//	/*
+//	 * Fetches interviewer Detail By Id.
+//	 */
 //	@GET
 //	@Path("/{id}/{availability}")
 //	@Produces(MediaType.APPLICATION_JSON)
@@ -35,18 +57,9 @@ public class InterviewersResources {
 //		return interviewerService.findInterviewerById(id,availability);
 //	}
 
-	/*
-	 * All the interviewers details will be displayed.
-	 */
-//	@GET
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public List<Interviewer> getAdmins() {
-//		return interviewerService.findAllInterviewers();
-//	}
-
-	/*
-	 * New interviewer can be added.
-	 */
+//	/*
+//	 * New interviewer can be added.
+//	 */
 //	@POST
 //	@Path("/addInterviewer")
 //	@Consumes(MediaType.APPLICATION_JSON)
@@ -56,24 +69,13 @@ public class InterviewersResources {
 //		return Response.status(Status.CREATED).entity(interviewer).build();
 //	}
 
-	/*
-	 * Assign
-	 */
-	@PUT
-	@Path("/assign/{id}")
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getUpdateById(@PathParam("id") int candId, Interviewer interviewer) {
-		Interviewer i = interviewerService.UpdateInterviewer(interviewer, candId);
-		return Response.status(Status.OK).entity(i).build();
-	}
-
-	@GET
-	@Path("/getInterviewers/{id}")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Interviewer> algoInterviewers(@PathParam("id") int candId) {
-		return interviewerService.preferredInterviewers(candId);
-	}
+//	/*
+//	 * All the Interviewers details will be displayed.
+//	 */
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public List<Interviewer> getAdmins() {
+//		return interviewerService.findAllInterviewers();
+//	}
 
 }

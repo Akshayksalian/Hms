@@ -26,23 +26,35 @@ public class CandidatesServiceImpl implements CandidatesService {
 	@Autowired
 	private CandidatesDAOImpl dao;
 
+	/*
+	 * Get a Candidate based on the id provided.
+	 */
 	@Override
 	public Candidates findCandidateById(int id) {
 		Candidates candidates = dao.findCandidateById(id);
 		return candidates;
 	}
 
+	/*
+	 * Get all the Candidate List
+	 */
 	@Override
 	public List<Candidates> findAllCandidates() {
 		return dao.findAllCandidates();
 	}
 
+	/*
+	 * Add Candidate to the database.
+	 */
 	@Override
 	@Transactional
 	public void addCandidates(Candidates candidates) {
 		dao.addCandidates(candidates);
 	}
 
+	/*
+	 * Update Questionnaires part into database based on the users entry.
+	 */
 	@Override
 	@Transactional
 	public Candidates updateCandidatesQuestionnaires(Candidates candidates) {
@@ -57,6 +69,23 @@ public class CandidatesServiceImpl implements CandidatesService {
 		return dao.updateCandidatesQuestionnaires(c);
 	}
 
+	/*
+	 * Update Feedback of the Candidate based on the entry provided.
+	 */
+	@Override
+	@Transactional
+	public Candidates updateCandidatesFeedback(Candidates candidates) {
+		Candidates c = findCandidateById(candidates.getCandidates_id());
+		if (c == null) {
+			throw new IllegalArgumentException("Id not Found " + candidates.getCandidates_id());
+		}
+		c.setFeedback(candidates.getFeedback());
+		return dao.updateCandidatesFeedback(c);
+	}
+
+	/*
+	 * Delete Candidate from the database based on the id provided.
+	 */
 	@Override
 	@Transactional
 	public void deleteCandidates(int id) {
@@ -67,22 +96,26 @@ public class CandidatesServiceImpl implements CandidatesService {
 		dao.deleteCandidates(u);
 	}
 
+	/*
+	 * Find Candidates based on there job domain id.
+	 */
 	@Override
 	public List<Candidates> findByDomainId(int id) {
 		return dao.findByDomainId(id);
 	}
 
+	/*
+	 * Fetch Candidates details from the CSV file and add it into the database.
+	 */
 	@Override
 	public void fetchCandidates() {
-
 		String file = "D:\\CSVDemo.csv";
 		Path pathToFile = Paths.get(file);
 		List<Candidates> candList = new ArrayList<>();
 		try (BufferedReader br = Files.newBufferedReader(pathToFile)) {
-
 			String row = br.readLine();
 			while (row != null) {
-				String[] attributes = row.split(",");
+				String[] attributes = row.toUpperCase().split(",");
 				Candidates cand = getOneCandidate(attributes);
 				candList.add(cand);
 				row = br.readLine();
@@ -93,8 +126,10 @@ public class CandidatesServiceImpl implements CandidatesService {
 		}
 	}
 
+	/*
+	 * Converting String array to Candidates object.
+	 */
 	public Candidates getOneCandidate(String[] attr) {
-
 		Candidates can = new Candidates();
 		can.setName(attr[0]);
 		int exp = Integer.parseInt(attr[1]);
@@ -104,13 +139,24 @@ public class CandidatesServiceImpl implements CandidatesService {
 		can.setContact_no(attr[4]);
 		can.setCompany_name(attr[5]);
 		can.setCandidates_location(attr[6]);
-
 		Domain d = new Domain();
 		d.setDomain_id(Integer.parseInt(attr[7]));
-
 		can.setDomain(d);
-
 		return can;
+	}
+
+	@Override
+	@Transactional
+	public void updateHire(int id) {
+		Candidates candidates = findCandidateById(id);
+		candidates.setStatus("Hired");
+	}
+
+	@Override
+	@Transactional
+	public void updateReject(int id) {
+		Candidates candidates = findCandidateById(id);
+		candidates.setStatus("Rejected");
 	}
 
 }

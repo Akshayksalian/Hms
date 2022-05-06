@@ -1,0 +1,26 @@
+package com.hms.service;
+
+import java.util.List;
+
+import com.hms.entities.Candidates;
+
+public interface CandidatesService {
+
+	public abstract Candidates findCandidateById(int id);
+
+	public abstract List<Candidates> findAllCandidates();
+
+	public abstract void addCandidates(Candidates candidates);
+
+	public abstract Candidates updateCandidatesQuestionnaires(Candidates candidates);
+
+	public abstract Candidates updateCandidatesFeedback(Candidates candidates);
+
+	public abstract void deleteCandidates(int id);
+
+	public abstract List<Candidates> findByDomainId(int id);
+
+	public abstract void fetchCandidates();
+	
+	public abstratc void updateHire();
+}

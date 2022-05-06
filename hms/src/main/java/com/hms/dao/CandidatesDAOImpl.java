@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.hms.entities.Candidates;
 
 /*
- * 
+ * Candidates Data Access Object
  */
 @Repository
 public class CandidatesDAOImpl implements CandidatesDAO {
@@ -42,16 +42,34 @@ public class CandidatesDAOImpl implements CandidatesDAO {
 		em.persist(candidates);
 	}
 
+	/*
+	 * Update the Questionnaire part in the dataBase.
+	 */
 	@Override
 	public Candidates updateCandidatesQuestionnaires(Candidates candidates) {
 		return em.merge(candidates);
 	}
 
+	/*
+	 * Update the feedback given to the candidates into the database.
+	 */
+	@Override
+	public Candidates updateCandidatesFeedback(Candidates candidates) {
+		return em.merge(candidates);
+	}
+
+	/*
+	 * Delete a Candidate from the database.
+	 */
 	@Override
 	public void deleteCandidates(Candidates candidates) {
 		em.remove(candidates);
 	}
 
+	/*
+	 * Named Native Query gives us a result of all the candidates based on the
+	 * domain id entered.
+	 */
 	@Override
 	public List<Candidates> findByDomainId(int id) {
 		List<Candidates> candidates = em.createNamedQuery("byDomainId", Candidates.class).setParameter(1, id)

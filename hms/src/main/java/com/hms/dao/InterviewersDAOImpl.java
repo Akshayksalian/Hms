@@ -1,5 +1,6 @@
 package com.hms.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import com.hms.entities.Candidates;
 import com.hms.entities.Interviewer;
 
+/*
+ * Interviewers Data Access Object
+ */
 @Repository
 public class InterviewersDAOImpl implements InterviewersDAO {
 
@@ -20,7 +24,7 @@ public class InterviewersDAOImpl implements InterviewersDAO {
 	 * Get the Interviewers By Id.
 	 */
 	@Override
-	public Interviewer findInterviewerById(int id, String availability) {
+	public Interviewer findInterviewerById(int id, LocalDateTime availability) {
 		Interviewer interviewer = em.createNamedQuery("byInterviwerId", Interviewer.class).setParameter(1, id)
 				.setParameter(2, availability).getSingleResult();
 		return interviewer;
@@ -42,11 +46,17 @@ public class InterviewersDAOImpl implements InterviewersDAO {
 		em.persist(interviewer);
 	}
 
+	/*
+	 * Update interviewers fields.
+	 */
 	@Override
-	public Interviewer updateInterviewer(Interviewer interviewer,Candidates candidates) {
+	public Interviewer updateInterviewer(Interviewer interviewer, Candidates candidates) {
 		return em.merge(interviewer);
 	}
 
+	/*
+	 * Get only the interviewers which are suitable for particular candidate.
+	 */
 	@Override
 	public List<Interviewer> preferredInterviewers(int id) {
 		return findAllInterviewers();

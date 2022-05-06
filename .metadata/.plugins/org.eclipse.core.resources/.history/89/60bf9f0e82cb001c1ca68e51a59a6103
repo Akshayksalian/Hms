@@ -1,0 +1,145 @@
+package com.hms.service;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hms.dao.CandidatesDAOImpl;
+import com.hms.entities.Candidates;
+import com.hms.entities.Domain;
+
+/*
+ * 
+ */
+@Service
+@Transactional(readOnly = false)
+public class CandidatesServiceImpl implements CandidatesService {
+
+	@Autowired
+	private CandidatesDAOImpl dao;
+
+	/*
+	 * Get a Candidate based on the id provided.
+	 */
+	@Override
+	public Candidates findCandidateById(int id) {
+		Candidates candidates = dao.findCandidateById(id);
+		return candidates;
+	}
+
+	/*
+	 * Get all the Candidate List
+	 */
+	@Override
+	public List<Candidates> findAllCandidates() {
+		return dao.findAllCandidates();
+	}
+
+	/*
+	 * Add Candidate to the database.
+	 */
+	@Override
+	@Transactional
+	public void addCandidates(Candidates candidates) {
+		dao.addCandidates(candidates);
+	}
+
+	/*
+	 * Update Questionnaires part into database based on the users entry.
+	 */
+	@Override
+	@Transactional
+	public Candidates updateCandidatesQuestionnaires(Candidates candidates) {
+		Candidates c = findCandidateById(candidates.getCandidates_id());
+		if (c == null) {
+			throw new IllegalArgumentException("Id not Found " + candidates.getCandidates_id());
+		}
+		c.setNotice_period(candidates.getNotice_period());
+		c.setExpected_ctc(candidates.getExpected_ctc());
+		c.setShifts(candidates.getShifts());
+		c.setRelocation(candidates.getRelocation());
+		return dao.updateCandidatesQuestionnaires(c);
+	}
+
+	/*
+	 * Update Feedback of the Candidate based on the entry provided.
+	 */
+	@Override
+	@Transactional
+	public Candidates updateCandidatesFeedback(Candidates candidates) {
+		Candidates c = findCandidateById(candidates.getCandidates_id());
+		if (c == null) {
+			throw new IllegalArgumentException("Id not Found " + candidates.getCandidates_id());
+		}
+		c.setFeedback(candidates.getFeedback());
+		return dao.updateCandidatesFeedback(c);
+	}
+
+	/*
+	 * Delete Candidate from the database based on the id provided.
+	 */
+	@Override
+	@Transactional
+	public void deleteCandidates(int id) {
+		Candidates u = findCandidateById(id);
+		if (u == null) {
+			throw new IllegalArgumentException("ID not found " + id);
+		}
+		dao.deleteCandidates(u);
+	}
+
+	/*
+	 * Find Candidates based on there job domain id.
+	 */
+	@Override
+	public List<Candidates> findByDomainId(int id) {
+		return dao.findByDomainId(id);
+	}
+
+	/*
+	 * Fetch Candidates details from the CSV file and add it into the dataBase.
+	 */
+	@Override
+	public void fetchCandidates() {
+		String file = "D:\\CSVDemo.csv";
+		Path pathToFile = Paths.get(file);
+		List<Candidates> candList = new ArrayList<>();
+		try (BufferedReader br = Files.newBufferedReader(pathToFile)) {
+			String row = br.readLine();
+			while (row != null) {
+				String[] attributes = row.split(",");
+				Candidates cand = getOneCandidate(attributes);
+				candList.add(cand);
+				row = br.readLine();
+				dao.addCandidates(cand);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public Candidates getOneCandidate(String[] attr) {
+		Candidates can = new Candidates();
+		can.setName(attr[0]);
+		int exp = Integer.parseInt(attr[1]);
+		can.setExp(exp);
+		can.setCandidate_skills(attr[2]);
+		can.setEmail(attr[3]);
+		can.setContact_no(attr[4]);
+		can.setCompany_name(attr[5]);
+		can.setCandidates_location(attr[6]);
+		Domain d = new Domain();
+		d.setDomain_id(Integer.parseInt(attr[7]));
+		can.setDomain(d);
+		return can;
+	}
+
+}

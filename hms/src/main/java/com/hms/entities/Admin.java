@@ -9,14 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /*
- * 
+ * Admin Table
  */
 @Entity
 public class Admin implements Serializable {
-	/*
+
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -3329772158704205808L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

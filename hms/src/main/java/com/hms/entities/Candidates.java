@@ -1,6 +1,7 @@
 package com.hms.entities;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,13 +16,11 @@ import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToOne;
 
 /*
- * 
+ * Candidate Table
  */
 @Entity
-
 @NamedNativeQueries({
-	@NamedNativeQuery(name="byDomainId",query = "select * from candidates where job_id = ?",resultClass = Candidates.class)
-})
+		@NamedNativeQuery(name = "byDomainId", query = "select * from candidates where job_id = ?", resultClass = Candidates.class) })
 public class Candidates implements Serializable {
 
 	/**
@@ -35,40 +34,40 @@ public class Candidates implements Serializable {
 
 	@Column(nullable = false)
 	private String name;
-	
+
 	@Column(nullable = false)
 	private int exp;
-	
+
 	@Column(nullable = false)
 	private String candidate_skills;
-	
+
 	@Column(nullable = false)
 	private String email;
-	
+
 	@Column(nullable = false)
 	private String contact_no;
-	
+
 	@Column(nullable = false)
 	private String company_name;
-	
+
 	@Column(nullable = false)
 	private String candidates_location;
-	
-	@Column(nullable=true)
+
+	@Column(nullable = true)
 	private String notice_period;
-	
-	@Column(nullable=true)
+
+	@Column(nullable = true)
 	private String expected_ctc;
 	private String shifts;
 	private String relocation;
 	private String feedback;
-	private String interview_sceduled_date;
+	private LocalDateTime interview_sceduled_date;
 	private String status;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "job_id", nullable = false)
 	private Domain domain;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Interviewer interviewer;
 
@@ -78,7 +77,7 @@ public class Candidates implements Serializable {
 
 	public Candidates(int candidates_id, String name, int exp, String candidate_skills, String email, String contact_no,
 			String company_name, String candidates_location, String notice_period, String expected_ctc, String shifts,
-			String relocation, String feedback, String interview_sceduled_date, String status, Domain domain) {
+			String relocation, String feedback, LocalDateTime interview_sceduled_date, String status, Domain domain) {
 		super();
 		this.candidates_id = candidates_id;
 		this.name = name;
@@ -202,11 +201,11 @@ public class Candidates implements Serializable {
 		this.feedback = feedback;
 	}
 
-	public String getInterview_sceduled_date() {
+	public LocalDateTime getInterview_sceduled_date() {
 		return interview_sceduled_date;
 	}
 
-	public void setInterview_sceduled_date(String interview_sceduled_date) {
+	public void setInterview_sceduled_date(LocalDateTime interview_sceduled_date) {
 		this.interview_sceduled_date = interview_sceduled_date;
 	}
 
@@ -243,5 +242,5 @@ public class Candidates implements Serializable {
 				+ feedback + ", interview_sceduled_date=" + interview_sceduled_date + ", status=" + status + ", domain="
 				+ domain + "]";
 	}
-
+	
 }

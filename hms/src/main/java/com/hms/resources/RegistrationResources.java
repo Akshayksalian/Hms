@@ -21,13 +21,19 @@ public class RegistrationResources {
 
 	@Autowired
 	private RegistrationService registrationService;
-	
+
+	/*
+	 * Get all the Admin data.
+	 */
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	public List<Admin> getAllAdmin() {
 		return registrationService.findAllAdmin();
 	}
 
+	/*
+	 * Add a new Admin user to the database.
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
@@ -35,7 +41,10 @@ public class RegistrationResources {
 		registrationService.addAdmin(admin);
 		return Response.status(Status.CREATED).entity(admin).build();
 	}
-	
+
+	/*
+	 * Authenticate the user Login and sends the response.
+	 */
 	@POST
 	@Path("/login")
 	@Consumes({ MediaType.APPLICATION_JSON })
@@ -43,6 +52,5 @@ public class RegistrationResources {
 		String Auth = registrationService.checkAdmin(admin);
 		return Response.status(Status.OK).entity(Auth).build();
 	}
-	
 
 }
